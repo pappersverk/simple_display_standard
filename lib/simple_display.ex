@@ -4,10 +4,7 @@ defmodule SimpleDisplay do
   target for a lot of simpler display in Elixir and Nerves.
   """
 
-  @callback info :: %{
-              resolution: {integer(), integer()},
-              depth_bits: integer()
-            }
-  @callback set_pixels([]) :: :ok | {:error, Atom.t(), String.t()}
+  @callback info :: %{resolution: {integer(), integer()}}
+  @callback set_pixels([byte()]) :: :ok | {:error, Atom.t(), String.t()}
   @callback render_to_display :: :ok | {:error, Atom.t(), String.t()}
 end
